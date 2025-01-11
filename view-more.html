@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .video-container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <h1>Watch the Video</h1>
+        <video id="videoPlayer" controls>
+            <source src="ra.mp4" type="video/mp4">
+            <!-- <source src="your-video.webm" type="video/webm">
+            <source src="your-video.ogg" type="video/ogg"> -->
+            Your browser does not support HTML5 video. Please update your browser.
+        </video>
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="playVideo()">Play</button>
+            <button class="btn btn-secondary" onclick="pauseVideo()">Pause</button>
+            <button class="btn btn-danger" onclick="restartVideo()">Restart</button>
+        </div>
+    </div>
+
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        function playVideo() {
+            videoPlayer.play();
+        }
+
+        function pauseVideo() {
+            videoPlayer.pause();
+        }
+
+        function restartVideo() {
+            videoPlayer.currentTime = 0;
+            videoPlayer.play();
+        }
+    </script>
+</body>
+</html>
