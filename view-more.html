@@ -25,7 +25,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .video-container video {
+        .video-container video, iframe {
             width: 100%;
             height: auto;
             border-radius: 10px;
@@ -33,21 +33,34 @@
         .btn-container {
             margin-top: 20px;
         }
+        .external-link {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="video-container">
         <h1>Watch the Video</h1>
+
+        <!-- Embed Google Drive video -->
+<!--         <iframe src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" frameborder="0" allow="autoplay" allowfullscreen></iframe> -->
+<iframe src="https://drive.google.com/file/d/10NbaSqzQWIJN9W4KEC-uk2b9pWFl7qGg/preview" width="640" height="480" allow="autoplay"></iframe>
+        <!-- Local video fallback -->
         <video id="videoPlayer" controls>
             <source src="ra.mp4" type="video/mp4">
-            <!-- <source src="your-video.webm" type="video/webm">
-            <source src="your-video.ogg" type="video/ogg"> -->
             Your browser does not support HTML5 video. Please update your browser.
         </video>
+
+        <!-- Buttons for local video -->
         <div class="btn-container">
             <button class="btn btn-primary" onclick="playVideo()">Play</button>
             <button class="btn btn-secondary" onclick="pauseVideo()">Pause</button>
             <button class="btn btn-danger" onclick="restartVideo()">Restart</button>
+        </div>
+
+        <!-- Link to open video on Google Drive -->
+        <div class="external-link">
+            <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing" target="_blank" class="btn btn-info">Watch on Google Drive</a>
         </div>
     </div>
 
